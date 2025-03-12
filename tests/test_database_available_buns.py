@@ -2,7 +2,7 @@ import allure
 
 
 @allure.feature("Database")
-@allure.story("Available Buns")
+@allure.story("Доступные булочки")
 def test_available_buns(database):
     with allure.step("Получаем список доступных булочек"):
         buns = database.available_buns()
@@ -11,8 +11,8 @@ def test_available_buns(database):
         assert len(buns) == 3
 
     with allure.step("Проверяем названия булочек"):
-        assert "black bun" in [bun.get_name() for bun in buns]
-        assert "white bun" in [bun.get_name() for bun in buns]
-        assert "red bun" in [bun.get_name() for bun in buns]
+        assert "black stellar_burger" in [bun.get_name() for bun in buns]
+        assert "white stellar_burger" in [bun.get_name() for bun in buns]
+        assert "red stellar_burger" in [bun.get_name() for bun in buns]
 
 

@@ -1,9 +1,9 @@
 import pytest
 from unittest.mock import Mock
-from bun import Bun
-from ingredient import Ingredient
-from burger import Burger
-from database import Database
+from stellar_burger.bun import Bun
+from stellar_burger.ingredient import Ingredient
+from stellar_burger.burger import Burger
+from stellar_burger.database import Database
 
 @pytest.fixture
 def mock_bun():
@@ -35,3 +35,7 @@ def burger():
 @pytest.fixture
 def database():
     return Database()
+
+@pytest.fixture
+def bun():
+    return Bun

@@ -2,7 +2,7 @@ import allure
 
 
 @allure.feature("Burger")
-@allure.story("Удаление ингредиента")
+@allure.story("Установка булочки")
 def test_set_buns(burger, mock_bun):
     with allure.step("Устанавливаем булочку в бургер"):
         burger.set_buns(mock_bun)

@@ -1,6 +1,6 @@
 import pytest
 import allure
-from bun import Bun
+from stellar_burger.bun import Bun
 
 
 @pytest.mark.parametrize("name, price", [
@@ -9,7 +9,7 @@ from bun import Bun
     ("Red Bun", 300)
 ])
 @allure.feature("Bun")
-@allure.story("Bun Creation")
+@allure.story("Создание булочки")
 def test_bun_creation(name, price):
     with allure.step("Создаем булочку"):
         bun = Bun(name, price)

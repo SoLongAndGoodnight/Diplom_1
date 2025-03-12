@@ -1,11 +1,5 @@
 import allure
-import pytest
-#from database import Database
 
-
-# @pytest.fixture
-# def database():
-#     return Database()
 
 @allure.feature("Database")
 @allure.story("Available Ingredients")

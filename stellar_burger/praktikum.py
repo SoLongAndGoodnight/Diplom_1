@@ -1,6 +1,6 @@
 from typing import List
 
-from bun import Bun
+from stellar_burger import Bun
 from burger import Burger
 from database import Database
 from ingredient import Ingredient
