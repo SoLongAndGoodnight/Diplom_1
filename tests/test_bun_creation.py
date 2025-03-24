@@ -3,19 +3,28 @@ import allure
 from stellar_burger.bun import Bun
 
 
-@pytest.mark.parametrize("name, price", [
-    ("Black Bun", 100),
-    ("White Bun", 200),
-    ("Red Bun", 300)
-])
 @allure.feature("Bun")
-@allure.story("Создание булочки")
-def test_bun_creation(name, price):
-    with allure.step("Создаем булочку"):
-        bun = Bun(name, price)
+class TestBun:
+    @allure.title("Создание булочки")
+    def test_bun_creation(self):
+        assert Bun("name", 1)
 
-    with allure.step("Проверяем имя булочки"):
+    @allure.title("Проверяем имя булочки")
+    @pytest.mark.parametrize("name", [
+        "Black Bun",
+        "White Bun",
+        "Red Bun",
+    ])
+    def test_get_name(self, name):
+        bun = Bun(name, 1)
+
         assert bun.get_name() == name
 
-    with allure.step("Проверяем цену булочки"):
+    @allure.title("Проверяем цену булочки")
+    @pytest.mark.parametrize("price", [
+        100, 200, 300
+    ])
+    def test_get_price(self, price):
+        bun = Bun("name", price)
+
         assert bun.get_price() == price
